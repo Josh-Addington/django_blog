@@ -1,37 +1,17 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-<head>
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <title>Josh Addington</title>
-</head>
-<body>
-<div class="page-header">
-        <h1><a href='/'>Josh Addington</a></h1>
-</div>
-<div class="content container">
-        <div class="row">
-                <div class="col-md-8">
-                        {% for post in posts %}
+{% extends 'blog/base.html' %}
 
-                        <div class='post'>
-                                <h2><a href=''>{{ post.title }}</a></h2>
-                                <div class="date">
-                                        {{ post.posted_date }}
-                                </div>
-                                <p>
-                                        {{ post.text|linebreaks }}
-                                </p>
-                        </div>
+{% block content %}
+        {% for post in posts %}
 
-                        {% endfor %}
+        <div class='post'>
+                <h2><a href=''>{{ post.title }}</a></h2>
+                <div class="date">
+                        {{ post.posted_date }}
                 </div>
+                <p>
+                        {{ post.text|linebreaks }}
+                </p>
         </div>
-</div>
 
-</body>
-</html>
+        {% endfor %}
+{% endblock content %}
