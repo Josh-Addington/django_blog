@@ -4,6 +4,19 @@
         <title>Josh Addington</title>
 </head>
 <body>
-<h2>Posts</h2>
+<h1><a href='/'>Josh Addington</a></h1>
+
+{% for post in posts %}
+
+<div class='post_{{post.id}}'>
+        <h2><a href=''>{{ post.title }}</a></h2>
+        <p>{{ post.posted_date }}</p>
+        <p>
+                {{ post.text|linebreaks }}
+        </p>
+</div>
+
+{% endfor %}
+
 </body>
 </html>
