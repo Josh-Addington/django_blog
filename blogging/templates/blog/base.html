@@ -12,15 +12,16 @@
 <div class="page-header">
         <a href="{% url 'blogging.views.post_new' %}" class='top-menu'><span class='glyphicon glyphicon-plus'></span></a>
         <div class="nav">
-                <a href="">Home</a>
-                <a href="">Projects</a>
-                <a href="">Contact</a>
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/about/">Contact</a>
         </div>
         <h1><a href='/'>Josh Addington</a></h1>
 </div>
 <div class="content container">
         <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-10">
                 {% block content %}
                 {% endblock %}
                 </div>
