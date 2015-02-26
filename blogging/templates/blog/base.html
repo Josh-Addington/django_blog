@@ -2,8 +2,7 @@
 {% load staticfiles %}
 <html>
 <head>
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Poiret+One|Fira+Sans:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -12,6 +11,11 @@
 <body>
 <div class="page-header">
         <a href="{% url 'blogging.views.post_new' %}" class='top-menu'><span class='glyphicon glyphicon-plus'></span></a>
+        <div class="nav">
+                <a href="">Home</a>
+                <a href="">Projects</a>
+                <a href="">Contact</a>
+        </div>
         <h1><a href='/'>Josh Addington</a></h1>
 </div>
 <div class="content container">

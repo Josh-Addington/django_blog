@@ -1,36 +1,61 @@
 body {
-        font-family: 'Lora', serif;
+        background-color: #f0e5c3;
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 14pt;
+        line-height: 1.5em;
+        color: #533d36;
 }
 
 h1 a, h2 a {
-        color: #FCA205;
+        color: #533d36;
 }
 
 .page-header {
-        background-color: #ff9400;
-        margin-top: 0;
-        padding: 20px 20px 20px 40px;
+        border-bottom: 15px solid #63bcb6;
+        margin-top: 60px;
+        margin-bottom: 0px;
+        padding: 0px 20px 5px 90px;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active{
-        color: #ffffff;
-        font-size: 36pt;
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active{
+        color: #533d36;
+        font-size: 42pt;
         text-decoration: none;
         padding-left: 70px;
 }
 
+.nav{
+        padding-right: 80px;
+        float: right;
+}
+
+.nav a{
+        padding: 5px 10px;
+        color: #533d36;
+}
+
+.nav a:hover{
+        background-color: #a4cebb;
+}
+
 .content {
+        border-left: 40px solid #c76250;
         max-width: 970px;
         margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Poiret One';
+        font-weight: bold;
 }
+
 
 .date {
         float: right;
-        color: #828282;
+        color: #533d36;
 }
 
 .save {
@@ -42,7 +67,7 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-        color: #ffffff;
+        color: #533d36;
         float: right;
         font-size: 26pt;
         margin-right: 20px;
@@ -53,5 +78,6 @@ h1, h2, h3, h4 {
 }
 
 .post h2 a, .post h2 a:visited {
-        color: #000000;
+        font-size: 1.2em;
+        color: #533d36;
 }
