@@ -1,7 +1,5 @@
 body {
         font-family: 'Lora', serif;
-        max-width: 970px;
-        margin: 0 auto;
 }
 
 h1 a, h2 a {
@@ -18,10 +16,12 @@ h1 a, h2 a {
         color: #ffffff;
         font-size: 36pt;
         text-decoration: none;
+        padding-left: 70px;
 }
 
 .content {
-        margin-left: 40px;
+        max-width: 970px;
+        margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
