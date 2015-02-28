@@ -2,6 +2,7 @@
 {% load staticfiles %}
 <html>
 <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href='http://fonts.googleapis.com/css?family=Poiret+One|Fira+Sans:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -13,10 +14,10 @@
 <div class="page-header">
         <a href="{% url 'blogging.views.post_new' %}" class='top-menu'><span class='glyphicon glyphicon-plus'></span></a>
         <div class="nav">
-                <a href="/">Home</a>
-                <a href="/about/">About</a>
-                <a href="/projects/">Projects</a>
-                <a href="/about/">Contact</a>
+                <a href="../">Home</a>
+                <a href="../about/">About</a>
+                <a href="../projects/">Projects</a>
+                <a href="../contact/">Contact</a>
         </div>
         <h1><a href='/'>Josh Addington</a></h1>
 </div>
@@ -28,6 +29,5 @@
                 </div>
         </div>
 </div>
-
 </body>
 </html>

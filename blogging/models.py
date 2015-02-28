@@ -6,6 +6,7 @@ class Post(models.Model):
         author = models.ForeignKey('auth.User')
         title = models.CharField(max_length=200)
         text = models.TextField()
+        project = models.CharField(max_length=200, blank=True)
         created_date = models.DateTimeField(
                                            default=timezone.now)
         published_date = models.DateTimeField(blank=True, null=True)
@@ -16,3 +17,12 @@ class Post(models.Model):
 
         def __str__(self):
                 return self.title
+
+class Comment(models.Model):
+    author = models.CharField(max_length=25)
+    post = models.ForeignKey(Post)
+    text = models.TextField()
+    posted_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.post
