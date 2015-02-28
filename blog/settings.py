@@ -40,6 +40,11 @@ INSTALLED_APPS = (
     'projects',
 )
 
+LOCAL_APPS = (
+     'blog',
+     'projects',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
