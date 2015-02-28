@@ -3,5 +3,6 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'blog/', include('blogging.urls')),
+    url(r'^blog/', include('blogging.urls')),
+    url(r'^$', 'blogging.views.post_list'),
 )
