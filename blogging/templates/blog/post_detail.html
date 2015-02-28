@@ -6,9 +6,11 @@
                 {% if post.published_date %}
                                 {{post.published_date}}
                                 <br>
+                {% else %}
+                        <a href="{% url 'blogging.views.post_publish' pk=post.pk %}"><input type="submit" value="Publish" class="button spaced"></a><br>
                 {% endif%}
 
-                <a  href="{% url 'post_edit' pk=post.pk %}"><input type="submit" value='Edit' class="button edit">
+                <a  href="{% url 'post_edit' pk=post.pk %}"><input type="submit" value='Edit' class="button spaced">
                 </a>
                 </div>
 
