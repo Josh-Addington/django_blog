@@ -9,4 +9,6 @@ urlpatterns = patterns('',
         url(r'^about/$', views.about),
         url(r'^contact/$', views.contact),
         url(r'^projects/$', views.projects),
+        url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
+
 )
