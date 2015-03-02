@@ -1,7 +1,6 @@
 body {
-        background-color: #f0e5c3;
         font-family: 'Fira Sans', sans-serif;
-        font-size: 14pt;
+        font-size: 12pt;
         line-height: 1.5em;
         color: #533d36;
 }
@@ -46,7 +45,7 @@ h1 a, h2 a {
        /* margin: 0 auto; */
         margin-left: 15%;
         max-width: 970px;
-        border-left: 25px solid #c76250;
+        border-left: 5px solid #533d36;
         min-height: 530px;
         padding-bottom: 60px;
 }
@@ -109,6 +108,11 @@ h1, h2, h3, h4 {
         -webkit-box-shadow: inset 0 -2px #ad4937;
         box-shadow: inset 0 -2px #ad4937;
 }
+
+.button:hover{
+    color: #533d36 ;
+}
+
 .button:active {
         top: 1px;
         outline: none;
@@ -131,6 +135,7 @@ h1, h2, h3, h4 {
         margin: 5px;
         font-size: 30pt;
 }
+
 .small span{
     padding-top: 2px;
 }

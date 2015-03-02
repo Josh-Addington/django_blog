@@ -32,8 +32,10 @@
 <div class="content container">
         <div class="row">
                 <div class="col-md-11">
+                {% autoescape off %}
                 {% block content %}
                 {% endblock %}
+                {% endautoescape %}
                 </div>
         </div>
 </div>
