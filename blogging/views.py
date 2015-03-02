@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 
 
 def about(request):
@@ -22,7 +22,14 @@ def post_list(request):
 
 def post_detail(request, pk):
         post = get_object_or_404(Post, pk=pk)
-        return render(request, 'blog/post_detail.html', {'post': post})
+        form = CommentForm(request.POST or None)
+        if form.is_valid():
+                comment = form.save(commit=False)
+                comment.post = post
+                comment.save()
+                return redirect(request.path)
+        return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+
 
 @login_required
 def post_new(request):

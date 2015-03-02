@@ -17,9 +17,35 @@
                 {% endif %}
                 </div>
 
-        <h2>{{ post.title }}</h2>
-        <div class="blog-post">
-                {{ post.text|linebreaks }}
-        </div>
+                <h2>{{ post.title }}</h2>
+                <div class="blog-post">
+                        {{ post.text|linebreaks }}
+                </div>
+
+                {% if post.published_date %}
+                        <div class="comment-form">
+                                <h3>Add Comment</h3>
+                                 <form method="POST" class='comment-form'>{% csrf_token %}
+                                {{ form.as_p }}
+                                <input type='submit' value='Save' class='button'>
+                                </form>
+                        </div>
+                        <br>
+
+                        {% if post.comment_set.all %}
+                        <h2>Comments</h2>
+                        <hr>
+                        <div class="blog_comments">
+                                {% for comment in post.comment_set.all %}
+                                <div class="date">
+                                        {{ comment.posted_date }}
+                                </div>
+                                <h3> {{comment.author }} </h3>
+                                {{ comment.text|linebreaks }}
+                                <hr>
+                                {% endfor %}
+                        </div>
+                        {% endif %}
+                {% endif %}
         </div>
 {% endblock %}
