@@ -1,6 +1,7 @@
 # django_blog
 
 This a blogging platform that I created for myself using Django and PostGreSQL and deployed on Heroku.
+The blog can be visited at JoshAddington.com
 
 The blog app contains the Django project settings.
 
