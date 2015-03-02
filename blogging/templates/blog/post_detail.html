@@ -22,7 +22,7 @@
                         {{ post.text|linebreaks }}
                 </div>
 
-                {# {% if post.published_date %}
+                {% if post.published_date %}
                         <div class="comment-form">
                                 <h3>Add Comment</h3>
                                  <form method="POST" class='comment-form'>{% csrf_token %}
@@ -47,6 +47,6 @@
                         </div>
                         {% endif %}
 
-                {% endif %} #}
+                {% endif %}
         </div>
 {% endblock %}

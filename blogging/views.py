@@ -20,15 +20,15 @@ def post_list(request):
                 print(line.created_date)
         return render(request, 'blog/post_list.html', {'posts': posts})
 
-# def post_detail(request, pk):
-#         post = get_object_or_404(Post, pk=pk)
-#         form = CommentForm(request.POST or None)
-#         if form.is_valid():
-#                 comment = form.save(commit=False)
-#                 comment.post = post
-#                 comment.save()
-#                 return redirect(request.path)
-#         return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+def post_detail(request, pk):
+        post = get_object_or_404(Post, pk=pk)
+        form = CommentForm(request.POST or None)
+        if form.is_valid():
+                comment = form.save(commit=False)
+                comment.post = post
+                comment.save()
+                return redirect(request.path)
+        return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
 
 
 @login_required
