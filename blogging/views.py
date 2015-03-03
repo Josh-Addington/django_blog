@@ -8,17 +8,17 @@ from .forms import PostForm, CommentForm
 def about(request):
         return render(request, 'about.html')
 
+
 def contact(request):
         return render(request, 'contact.html')
 
-def projects(request):
-        return render(request, 'projects.html')
 
 def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
         for line in posts:
                 print(line.created_date)
         return render(request, 'blog/post_list.html', {'posts': posts})
+
 
 def post_detail(request, pk):
         post = get_object_or_404(Post, pk=pk)
@@ -44,6 +44,7 @@ def post_new(request):
                 form = PostForm()
         return render(request, 'blog/post_edit.html', {'form': form})
 
+
 @login_required
 def post_edit(request, pk):
         post = get_object_or_404(Post, pk=pk)
@@ -58,16 +59,19 @@ def post_edit(request, pk):
                 form = PostForm(instance=post)
         return render(request, 'blog/post_edit.html', {'form': form})
 
+
 @login_required
 def post_draft_list(request):
         posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
         return render(request, 'blog/post_draft_list.html', {'posts': posts})
+
 
 @login_required
 def post_publish(request, pk):
         post = get_object_or_404(Post, pk=pk)
         post.publish()
         return redirect('blogging.views.post_detail', pk=pk)
+
 
 @login_required
 def post_delete(request, pk):

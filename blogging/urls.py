@@ -10,7 +10,6 @@ urlpatterns = patterns('',
         url(r'^post/(?P<pk>[0-9]+)/delete/$', views.post_delete, name='post_delete'),
         url(r'^about/$', views.about),
         url(r'^contact/$', views.contact),
-        url(r'^projects/$', views.projects),
         url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
 
 )
