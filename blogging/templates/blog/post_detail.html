@@ -2,35 +2,28 @@
 
 {% block content %}
         <div class="post">
-                <div class="date">
-                {% if post.published_date %}
-                                {{post.published_date}}
-                                <br>
-                {% else %}
-                        <a href="{% url 'blogging.views.post_publish' pk=post.pk %}"><input type="submit" value="Publish" class="button spaced"></a><br>
-                {% endif%}
-
-                {% if user.is_authenticated %}
-                <a  href="{% url 'post_edit' pk=post.pk %}"class="button small"><span class="glyphicon glyphicon-edit"></span>
-                </a>
-                <a href="{% url 'post_delete' pk=post.pk %}" class="button small"><span class="glyphicon glyphicon-remove"></span></a>
-                {% endif %}
-                </div>
-
-                <h2>{{ post.title }}</h2>
                 <div class="blog-post">
-                        {{ post.text|linebreaks }}
-                </div>
+                        <div class="date">
+                                {% if post.published_date %}
+                                                {{post.published_date}}
+                                                <br>
+                                {% else %}
+                                        <a href="{% url 'blogging.views.post_publish' pk=post.pk %}"><input type="submit" value="Publish" class="button spaced"></a><br>
+                                {% endif%}
 
-                {% if post.published_date %}
-                        <div class="comment-form">
-                                <h3>Add Comment</h3>
-                                 <form method="POST" class='comment-form'>{% csrf_token %}
-                                {{ form.as_p }}
-                                <input type='submit' value='Save' class='button'>
-                                </form>
+                                {% if user.is_authenticated %}
+                                <a  href="{% url 'post_edit' pk=post.pk %}"class="button small"><span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                                <a href="{% url 'post_delete' pk=post.pk %}" class="button small"><span class="glyphicon glyphicon-remove"></span></a>
+                                {% endif %}
                         </div>
-                        <br>
+
+                        <h2>{{ post.title }}</h2>
+                        <div>
+                                {{ post.text|linebreaks }}
+                        </div>
+                </div>
+                {% if post.published_date %}
 
                         {% if post.comment_set.all %}
                         <h2>Comments</h2>
@@ -46,6 +39,14 @@
                                 {% endfor %}
                         </div>
                         {% endif %}
+
+                        <div class="comment-form">
+                                <h3>Add Comment</h3>
+                                 <form method="POST" class='comment-form'>{% csrf_token %}
+                                {{ form.as_p }}
+                                <input type='submit' value='Save' class='button'>
+                                </form>
+                        </div>
 
                 {% endif %}
         </div>
