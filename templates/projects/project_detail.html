@@ -7,12 +7,12 @@
                         {{project.published_date}}
                         <br>
                         {% else %}
-                        <a href="{% url 'projects.views.project_publish' pk=project.pk %}"><input type="submit" value="Publish" class="button spaced"></a><br>
+                        <a href="{% url 'projects.views.project_publish' pk=project.pk %}"><input type="submit" value="Publish" class="mybutton spaced"></a><br>
                         {% endif%}
 
                         {% if user.is_authenticated %}
-                        <a  href="{% url 'project_edit' pk=project.pk %}"class="button small"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a href="{% url 'project_delete' pk=project.pk %}" class="button small"><span class="glyphicon glyphicon-remove"></span></a>
+                        <a  href="{% url 'project_edit' pk=project.pk %}"class="mybutton small"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a href="{% url 'project_delete' pk=project.pk %}" class="mybutton small"><span class="glyphicon glyphicon-remove"></span></a>
                         {% endif %}
                 </div>
 

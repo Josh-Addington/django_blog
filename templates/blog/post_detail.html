@@ -8,13 +8,13 @@
                                                 {{post.published_date}}
                                                 <br>
                                 {% else %}
-                                        <a href="{% url 'blogging.views.post_publish' pk=post.pk %}"><input type="submit" value="Publish" class="button spaced"></a><br>
+                                        <a href="{% url 'blogging.views.post_publish' pk=post.pk %}"><input type="submit" value="Publish" class="mybutton spaced"></a><br>
                                 {% endif%}
 
                                 {% if user.is_authenticated %}
-                                <a  href="{% url 'post_edit' pk=post.pk %}"class="button small"><span class="glyphicon glyphicon-edit"></span>
+                                <a  href="{% url 'post_edit' pk=post.pk %}"class="mybutton small"><span class="glyphicon glyphicon-edit"></span>
                                 </a>
-                                <a href="{% url 'post_delete' pk=post.pk %}" class="button small"><span class="glyphicon glyphicon-remove"></span></a>
+                                <a href="{% url 'post_delete' pk=post.pk %}" class="mybutton small"><span class="glyphicon glyphicon-remove"></span></a>
                                 {% endif %}
                         </div>
 
@@ -44,7 +44,7 @@
                                 <h3>Add Comment</h3>
                                  <form method="POST" class='comment-form'>{% csrf_token %}
                                 {{ form.as_p }}
-                                <input type='submit' value='Save' class='button'>
+                                <input type='submit' value='Save' class='mybutton'>
                                 </form>
                         </div>
 
