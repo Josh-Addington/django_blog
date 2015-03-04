@@ -4,26 +4,28 @@
         <div class="project">
                 <div class="date">
                         {% if project.published_date %}
-                                        {{project.published_date}}
-                                        <br>
+                        {{project.published_date}}
+                        <br>
                         {% else %}
-                                <a href="{% url 'projects.views.project_publish' pk=project.pk %}"><input type="submit" value="Publish" class="button spaced"></a><br>
+                        <a href="{% url 'projects.views.project_publish' pk=project.pk %}"><input type="submit" value="Publish" class="button spaced"></a><br>
                         {% endif%}
 
                         {% if user.is_authenticated %}
-                        <a  href="{% url 'project_edit' pk=project.pk %}"class="button small"><span class="glyphicon glyphicon-edit"></span>
-                        </a>
+                        <a  href="{% url 'project_edit' pk=project.pk %}"class="button small"><span class="glyphicon glyphicon-edit"></span></a>
                         <a href="{% url 'project_delete' pk=project.pk %}" class="button small"><span class="glyphicon glyphicon-remove"></span></a>
                         {% endif %}
                 </div>
 
                 <h2>{{ project.title }}</h2>
-                <div>
+                <div class="project-post">
                         {{ project.content|linebreaks }}
+                </div>
+                <div class="project-code">
+                        {{ project.code|safe }}
                 </div>
         </div>
 {% endblock project %}
 
 {% block extra_js %}
-
+{{project.js|safe}}
 {% endblock extra_js %}

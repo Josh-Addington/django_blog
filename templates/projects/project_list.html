@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 
 {% block project %}
+
+        {% if user.is_authenticated %}
+        <div class="buttons">
+                <a href="{% url 'project_new' %}"><input type="submit" value="New Project" class="button spaced project"></a>
+               <br><br><br>
+
+                <a href="{% url 'project_draft_list' %}"><input type="submit" value="Project Drafts" class="button spaced project"></a>
+        </div>
+        {% endif %}
+
         {% for project in projects %}
 
         <div class='project'>

@@ -34,10 +34,14 @@
                 <div class="col-md-11">
                 {% autoescape off %}
                 {% block content %}
-                {% endblock %}
+                {% endblock content %}
+                {%  block project %}
+                {% endblock project %}
                 {% endautoescape %}
                 </div>
         </div>
 </div>
+{% block extra_js %}
+{% endblock extra_js %}
 </body>
 </html>

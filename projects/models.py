@@ -4,9 +4,11 @@ from django.utils import timezone
 
 # Create your models here.
 class Project(models.Model):
+        author = models.ForeignKey('auth.User')
         title = models.CharField(max_length=50)
         content = models.TextField()
-        code = models.TextField()
+        code = models.TextField(null=True)
+        js = models.TextField(null=True)
         created_date = models.DateTimeField(default=timezone.now)
         published_date = models.DateTimeField(blank=True, null=True)
 

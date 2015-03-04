@@ -1,3 +1,4 @@
+/*  Base CSS  */
 body {
         font-family: 'Fira Sans', sans-serif;
         font-size: 12pt;
@@ -45,7 +46,6 @@ hr{
 }
 
 .content {
-       /* margin: 0 auto; */
         margin-left: 15%;
         max-width: 970px;
         border-left: 5px solid #533d36;
@@ -68,6 +68,15 @@ h1, h2, h3, h4 {
         float: right;
 }
 
+.top-menu, .top-menu:hover, .top-menu:visited {
+        color: #533d36;
+        float: right;
+        font-size: 26pt;
+        margin-right: 20px;
+}
+
+
+/*  Blog/Project CSS  */
 .post-form textarea, .post-form input {
         width: 100%;
 }
@@ -79,12 +88,6 @@ h1, h2, h3, h4 {
 .comment-form textarea {
     width: 100%;
     max-height: 150px;
-}
-.top-menu, .top-menu:hover, .top-menu:visited {
-        color: #533d36;
-        float: right;
-        font-size: 26pt;
-        margin-right: 20px;
 }
 
 .post {
@@ -107,6 +110,19 @@ h1, h2, h3, h4 {
         color: #ad4937;
 }
 
+
+
+/* Project CSS */
+#id_js {
+    height: 150px;
+}
+
+#map{
+    width: 600px;
+    height: 800px;
+}
+
+/*  Button CSS  */
 .button {
         float: right;
         position: relative;
@@ -155,10 +171,23 @@ h1, h2, h3, h4 {
         font-size: 22pt;
 }
 
+.button.project {
+    display: block;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.buttons{
+    float: right;
+    margin: 0 0 15px 15px;
+}
+
 .small span{
     padding-top: 6px;
 }
 
+
+/*  Other CSS  */
 .row{
         padding-bottom: 20px;
 }
