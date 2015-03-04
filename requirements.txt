@@ -1,5 +1,6 @@
 Django==1.7.4
 Fabric==1.10.1
+Pillow==2.7.0
 boto==2.36.0
 dj-database-url==0.3.0
 dj-static==0.0.6
