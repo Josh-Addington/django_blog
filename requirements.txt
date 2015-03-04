@@ -1,8 +1,15 @@
 Django==1.7.4
+Fabric==1.10.1
+boto==2.36.0
 dj-database-url==0.3.0
 dj-static==0.0.6
+django-storages==1.1.8
 django-toolbelt==0.0.1
+ecdsa==0.13
 gunicorn==19.2.1
+newrelic==2.44.0.36
+paramiko==1.15.2
 psycopg2==2.6
+pycrypto==2.6.1
 static3==0.5.1
 whitenoise==1.0.6
