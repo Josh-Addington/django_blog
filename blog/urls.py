@@ -7,5 +7,5 @@ urlpatterns = patterns('',
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     url(r'^', include('blogging.urls')),
-    #url(r'^projects/', include('projects.urls')),
+    url(r'^projects/', include('projects.urls')),
 )

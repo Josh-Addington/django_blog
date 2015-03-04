@@ -6,6 +6,7 @@ from django.utils import timezone
 class Project(models.Model):
         title = models.CharField(max_length=50)
         content = models.TextField()
+        code = models.TextField()
         created_date = models.DateTimeField(default=timezone.now)
         published_date = models.DateTimeField(blank=True, null=True)
 

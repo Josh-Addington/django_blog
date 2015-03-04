@@ -15,8 +15,6 @@ def contact(request):
 
 def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-        for line in posts:
-                print(line.created_date)
         return render(request, 'blog/post_list.html', {'posts': posts})
 
 
