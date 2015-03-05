@@ -11,10 +11,8 @@ class PostAdmin(admin.ModelAdmin):
         fieldsets = [
                 (None, {'fields': ['author', 'title', 'project', 'text']}),
                 ('Date Information', {'fields': ['created_date', 'published_date']}),
-                ('Comments', {'fields': ['post.comment_set']}),
         ]
 
-        inlines = [CommentInline]
         list_display = ('title', 'project', 'created_date', 'published_date')
 
 
