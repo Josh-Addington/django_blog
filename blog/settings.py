@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'blogging',
     'projects',
     'storages',
+    'boto',
 )
 
 MIDDLEWARE_CLASSES = (
