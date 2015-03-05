@@ -6,7 +6,7 @@ from django.utils import timezone
 class Project(models.Model):
         author = models.ForeignKey('auth.User')
         title = models.CharField(max_length=50)
-        preview = models.ImageField()
+        preview = models.ImageField("Project Preview", upload_to="images", blank=True, null=True)
         content = models.TextField()
         code = models.TextField(null=True)
         js = models.TextField(null=True)

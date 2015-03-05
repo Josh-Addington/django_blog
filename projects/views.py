@@ -18,10 +18,11 @@ def project_detail(request, pk):
 @login_required
 def project_new(request):
         if request.method == "POST":
-                form = ProjectForm(request.POST or None)
+                form = ProjectForm(request.POST or None, request.FILES)
                 if form.is_valid():
                         project = form.save(commit=False)
                         project.author = request.user
+                        project.preview = request.FILES['preview']
                         project.save()
                         return redirect('projects.views.project_detail', pk=project.pk)
         else:

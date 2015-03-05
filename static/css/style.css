@@ -113,13 +113,13 @@ h1, h2, h3, h4 {
 
 
 /* Project CSS */
-#id_js {
+/*#id_js {
     height: 150px;
-}
+}*/
 
 #map{
     width: 600px;
-    height: 800px;
+    height: 850px;
 }
 
 /*  Button CSS  */

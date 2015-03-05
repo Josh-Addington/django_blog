@@ -1,8 +1,11 @@
-from django import forms
+from django.forms import ModelForm, Textarea
 from .models import Project
 
-class ProjectForm(forms.ModelForm):
+class ProjectForm(ModelForm):
 
         class Meta:
                 model = Project
-                fields = ('title', 'content', 'code', 'js')
+                fields = ('title', 'content', 'preview', 'code', 'js')
+                widgets = {
+                        'js': Textarea(attrs={'cols': 40, 'rows': 5}),
+                }
