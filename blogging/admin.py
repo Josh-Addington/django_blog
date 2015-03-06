@@ -13,7 +13,7 @@ class PostAdmin(admin.ModelAdmin):
                 ('Date Information', {'fields': ['created_date', 'published_date']}),
         ]
 
-        list_display = ('title', 'project', 'created_date', 'published_date')
+        list_display = ('title', 'created_date', 'published_date')
 
 
 class CommentAdmin(admin.ModelAdmin):
