@@ -19,7 +19,7 @@ LOGIN_REDIRECT_URL = '/'
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0=gffna9s3i-m$%0n-sk1*elcboru!(swv%tu)m(&1u0#ty_@0'
+SECRET_KEY = os.environ('BLOG_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -66,8 +66,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blogdb',
-        'USER': 'josh',
-        'PASSWORD': 'twice',
+        'USER': os.environ('BLOG_DB_USER'),
+        'PASSWORD': os.environ('BLOG_DB_PASSWORD'),
         'HOST': '',
         'PORT': '',
     }
