@@ -54,8 +54,9 @@ def post_edit(request, pk):
                         post.save()
                         return redirect('blogging.views.post_detail', pk=post.pk)
         else:
+                action = "Edit"
                 form = PostForm(instance=post)
-        return render(request, 'blog/post_edit.html', {'form': form})
+        return render(request, 'blog/post_edit.html', {'form': form, 'action': action})
 
 
 @login_required

@@ -145,15 +145,19 @@ h1, h2, h3, h4 {
     box-shadow: inset 0 -2px #ad4937;
 }
 
-.mybutton:hover{
-    color: #533d36 ;
-}
-
 .mybutton:active {
     top: 1px;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+.mybutton:hover{
+    color: #533d36 ;
+}
+
+.mybutton:visited{
+    color: white;
 }
 
 .mybutton.spaced{
