@@ -1,15 +1,13 @@
 from django.contrib import admin
 from .models import Project
+from blogging.models import Post
 
 
-
-class PostAdmin(admin.ModelAdmin):
-        fieldsets = [
-                (None, {'fields': ['author', 'title', 'project', 'text']}),
-                ('Date Information', {'fields': ['created_date', 'published_date']}),
-        ]
-
-        list_display = ('title', 'created_date', 'published_date')
+class LinkInline(admin.TabularInline):
+        model = Post.project.through
 
 
-admin.site.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+        inlines = [LinkInline, ]
+
+admin.site.register(Project, ProjectAdmin)

@@ -4,7 +4,6 @@ from .models import Post, Comment
 
 class CommentInline(admin.TabularInline):
         model = Comment
-        extra = 3
 
 
 class PostAdmin(admin.ModelAdmin):

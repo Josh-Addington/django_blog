@@ -14,6 +14,7 @@ def contact(request):
 
 
 def post_list(request):
+        #filter out unpublished posts, order by published date with newest at the top
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
         return render(request, 'blog/post_list.html', {'posts': posts})
 

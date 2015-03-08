@@ -12,7 +12,8 @@ def project_list(request):
 
 def project_detail(request, pk):
         project = get_object_or_404(Project, pk=pk)
-        return render(request, 'projects/project_detail.html', {'project': project})
+        posts_length = len(project.post_set.all())
+        return render(request, 'projects/project_detail.html', {'project': project, 'posts_length': posts_length})
 
 
 @login_required
