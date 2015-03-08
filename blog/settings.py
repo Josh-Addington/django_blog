@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import dj_database_url
 import os
 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
@@ -111,10 +113,10 @@ DATABASES['default'] = dj_database_url.config()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-#DEBUG = False
+DEBUG = False
+
 
 try:
     from .local_settings import *
 except ImportError:
     pass
-
