@@ -19,7 +19,26 @@
                         </div>
 
                         <h2>{{ post.title }}</h2>
-                        <div>
+
+                        <div class="post_content">
+                        {% comment %} Lists the associated projects with links to their pages. {% endcomment %}
+                            <div class="project-relation">
+                            {% if projects_length == 1 %}
+                                    <h4>This post describes the project
+                                    {%  for project in post.project.all %}
+                                           <a href="{%url 'projects.views.project_detail' pk=project.pk %}">{{project}}</a>.
+                                    {% endfor %} </h4>
+                            {% elif posts_length > 1 %}
+                                <h4>This post describes the projects
+                                {%  for project in post.project.all %}
+                                        {% if forloop.last %}
+                                                and <a href="{%url 'projects.views.project_detail' pk=project.pk %}">{{project}}</a>.
+                                        {% else %}
+                                                <a href="{%url 'projects.views.project_detail' pk=project.pk %}">{{project}}</a>,
+                                        {% endif %}
+                                {% endfor %} </h4>
+                            {% endif %}
+                            </div>
                                 {{ post.text|linebreaks }}
                         </div>
                 </div>
