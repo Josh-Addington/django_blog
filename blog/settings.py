@@ -24,7 +24,6 @@ LOGIN_REDIRECT_URL = '/'
 SECRET_KEY = os.environ['BLOG_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -113,7 +112,7 @@ DATABASES['default'] = dj_database_url.config()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-DEBUG = False
+DEBUG = True
 
 
 try:
