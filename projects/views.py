@@ -12,7 +12,8 @@ def project_list(request):
 
 def project_detail(request, pk):
         project = get_object_or_404(Project, pk=pk)
-        return render(request, 'projects/project_detail.html', {'project': project})
+        posts_length = len(project.post_set.all())
+        return render(request, 'projects/project_detail.html', {'project': project, 'posts_length': posts_length})
 
 
 @login_required
@@ -22,7 +23,6 @@ def project_new(request):
                 if form.is_valid():
                         project = form.save(commit=False)
                         project.author = request.user
-                        project.preview = request.FILES['preview']
                         project.save()
                         return redirect('projects.views.project_detail', pk=project.pk)
         else:
