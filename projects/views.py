@@ -23,7 +23,6 @@ def project_new(request):
                 if form.is_valid():
                         project = form.save(commit=False)
                         project.author = request.user
-                        project.preview = request.FILES['preview']
                         project.save()
                         return redirect('projects.views.project_detail', pk=project.pk)
         else:

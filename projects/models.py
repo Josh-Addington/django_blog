@@ -7,15 +7,12 @@ class Project(models.Model):
         author = models.ForeignKey('auth.User')
         title = models.CharField(max_length=50)
 
-        preview = models.CharField(max_length=250)
+        preview = models.CharField(max_length=250, blank=True)
         content = models.TextField()
-        code = models.TextField(null=True)
-        js = models.TextField(null=True)
+        code = models.TextField(blank=True)
+        js = models.TextField(blank=True)
         created_date = models.DateTimeField(default=timezone.now)
         published_date = models.DateTimeField(blank=True, null=True)
-
-        class Meta():
-                app_label = 'projects'
 
         def publish(self):
                 self.published_date = timezone.now()

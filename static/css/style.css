@@ -118,6 +118,14 @@ h1, h2, h3, h4 {
 
 /* Project CSS */
 
+#id_project li {
+    list-style-type: none;
+}
+
+#id_label li label{
+    margin-bottom: -20px;
+}
+
 #map{
     width: 600px;
     height: 850px;

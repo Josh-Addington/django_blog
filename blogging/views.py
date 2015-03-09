@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
+from projects.models import Project
 
 
 def about(request):
@@ -38,6 +39,8 @@ def post_new(request):
                         post = form.save(commit=False)
                         post.author = request.user
                         post.save()
+                        # This saves the project relation
+                        form.save_m2m()
                         return redirect('blogging.views.post_detail', pk=post.pk)
         else:
                 form = PostForm()
@@ -53,6 +56,8 @@ def post_edit(request, pk):
                         post = form.save(commit=False)
                         post.author = request.user
                         post.save()
+                        # This saves project relation
+                        form.save_m2m()
                         return redirect('blogging.views.post_detail', pk=post.pk)
         else:
                 action = "Edit"
