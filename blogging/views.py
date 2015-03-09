@@ -22,13 +22,14 @@ def post_list(request):
 
 def post_detail(request, pk):
         post = get_object_or_404(Post, pk=pk)
+        projects_length = len(post.project.all())
         form = CommentForm(request.POST or None)
         if form.is_valid():
                 comment = form.save(commit=False)
                 comment.post = post
                 comment.save()
                 return redirect(request.path)
-        return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+        return render(request, 'blog/post_detail.html', {'post': post, 'projects_length': projects_length, 'form': form})
 
 
 @login_required
