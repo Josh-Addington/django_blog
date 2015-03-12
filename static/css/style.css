@@ -20,6 +20,7 @@ hr{
     border-bottom: 15px solid #63bcb6;
     margin: 0;
     padding: 20px 80px 0 120px;
+
 }
 
 .page-header h1,
@@ -29,6 +30,9 @@ hr{
     padding: 10px;
 }
 
+.header-wrapper{
+    max-width: 1200px;
+}
 .nav{
     padding-right: 80px;
     float: right;
