@@ -20,6 +20,7 @@ hr{
     border-bottom: 15px solid #63bcb6;
     margin: 0;
     padding: 20px 80px 0 120px;
+
 }
 
 .page-header h1,
@@ -29,6 +30,9 @@ hr{
     padding: 10px;
 }
 
+.header-wrapper{
+    max-width: 1200px;
+}
 .nav{
     padding-right: 80px;
     float: right;
@@ -48,6 +52,10 @@ hr{
     border-left: 5px solid #533d36;
     min-height: 530px;
     padding: 20px 0 60px 10px;
+}
+
+.content a{
+    text-decoration: underline;
 }
 
 h1, h2, h3, h4 {
@@ -104,6 +112,10 @@ h1, h2, h3, h4 {
     font-size: 26pt;
 }
 
+.post-content a{
+    text-decoration: underline;
+}
+
 .blog-post{
     min-height: 160px;
     margin-top: 10px;
@@ -122,6 +134,11 @@ h1, h2, h3, h4 {
 #map{
     width: 600px;
     height: 850px;
+}
+
+#mapbox{
+    width: 600px;
+    height: 550px;
 }
 
 .post-relation, .project-relation{

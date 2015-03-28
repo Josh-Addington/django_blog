@@ -7,9 +7,7 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
-import dj_database_url
 import os
-
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -88,15 +86,19 @@ USE_L10N = True
 USE_TZ = True
 
 # Amazon Web Services
+
+
 AWS_QUERYSTRING_AUTH = False
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
+DEFAULT_FILE_STORAGE = "blog.s3utils.MediaRootS3BotoStorage"
+
+S3_URL = 'http;//{0}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+STATIC_URL = os.environ.get('STATIC_URL', S3_URL + 'static/')
+STATICFILES_STORAGE = "blog.s3utils.StaticRootS3BotoStorage"
 MEDIA_URL = 'http://%s.s3.amazonaws.com/django/' % AWS_STORAGE_BUCKET_NAME
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 # Static files (CSS, JavaScript, Images)
@@ -106,14 +108,13 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-
+import dj_database_url
 DATABASES['default'] = dj_database_url.config()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-DEBUG = True
-
+DEBUG = os.environ['DJANGO_DEBUG']
 
 try:
     from .local_settings import *

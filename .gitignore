@@ -2,3 +2,9 @@ myvenv
 __pycache__
 staticfiles
 local_settings.py
+# s3utils.py
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
