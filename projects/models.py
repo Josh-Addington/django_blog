@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-# Create your models here.
+# Model for keeping track of Projects
 class Project(models.Model):
         author = models.ForeignKey('auth.User')
         title = models.CharField(max_length=50)
