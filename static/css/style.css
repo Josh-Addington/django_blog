@@ -54,8 +54,8 @@ hr{
     padding: 20px 0 60px 10px;
 }
 
-.content a:hover{
-    background-color: #a4cebb; 
+.content a{
+    text-decoration: underline;
 }
 
 h1, h2, h3, h4 {
@@ -110,6 +110,10 @@ h1, h2, h3, h4 {
 .post h2 a,
 .post h2 a:visited {
     font-size: 26pt;
+}
+
+.post-content a{
+    text-decoration: underline;
 }
 
 .blog-post{

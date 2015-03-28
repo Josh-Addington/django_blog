@@ -19,7 +19,7 @@ LOGIN_REDIRECT_URL = '/'
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['BLOG_SECRET_KEY']
+# SECRET_KEY = os.environ['BLOG_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -114,7 +114,7 @@ DATABASES['default'] = dj_database_url.config()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-DEBUG = os.environ['DJANGO_DEBUG']
+DEBUG = os.environ['DEBUG']
 
 try:
     from .local_settings import *
