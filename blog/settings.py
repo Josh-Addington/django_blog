@@ -92,11 +92,11 @@ AWS_QUERYSTRING_AUTH = False
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
+DEFAULT_FILE_STORAGE = "blog.s3utils.MediaRootS3BotoStorage"
 
 S3_URL = 'http;//{0}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
 STATIC_URL = os.environ.get('STATIC_URL', S3_URL + 'static/')
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = "blog.s3utils.StaticRootS3BotoStorage"
 MEDIA_URL = 'http://%s.s3.amazonaws.com/django/' % AWS_STORAGE_BUCKET_NAME
 
 
