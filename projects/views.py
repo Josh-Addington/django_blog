@@ -6,43 +6,43 @@ from .forms import ProjectForm
 
 
 def project_list(request):
-        projects = Project.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-        return render(request, 'projects/project_list.html', {'projects': projects})
+    projects = Project.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'projects/project_list.html', {'projects': projects})
 
 
 def project_detail(request, pk):
-        project = get_object_or_404(Project, pk=pk)
-        posts_length = len(project.post_set.all())
-        return render(request, 'projects/project_detail.html', {'project': project, 'posts_length': posts_length})
+    project = get_object_or_404(Project, pk=pk)
+    posts_length = len(project.post_set.all())
+    return render(request, 'projects/project_detail.html', {'project': project, 'posts_length': posts_length})
 
 
 @login_required
 def project_new(request):
-        if request.method == "POST":
-                form = ProjectForm(request.POST or None, request.FILES)
-                if form.is_valid():
-                        project = form.save(commit=False)
-                        project.author = request.user
-                        project.save()
-                        return redirect('projects.views.project_detail', pk=project.pk)
-        else:
-                form = ProjectForm()
-        return render(request, 'projects/project_edit.html', {'form': form})
+    if request.method == "POST":
+        form = ProjectForm(request.POST or None, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.author = request.user
+            project.save()
+            return redirect('projects.views.project_detail', pk=project.pk)
+    else:
+        form = ProjectForm()
+    return render(request, 'projects/project_edit.html', {'form': form})
 
 
 @login_required
 def project_edit(request, pk):
-        project = get_object_or_404(Project, pk=pk)
-        if request.method == "POST":
-                form = ProjectForm(request.POST, instance=project)
-                if form.is_valid():
-                        project = form.save(commit=False)
-                        project.author = request.user
-                        project.save()
-                        return redirect('projects.views.project_detail', pk=project.pk)
-        else:
-                form = ProjectForm(instance=project)
-        return render(request, 'projects/project_edit.html', {'form': form})
+    project = get_object_or_404(Project, pk=pk)
+    if request.method == "POST":
+        form = ProjectForm(request.POST, instance=project)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.author = request.user
+            project.save()
+            return redirect('projects.views.project_detail', pk=project.pk)
+    else:
+        form = ProjectForm(instance=project)
+    return render(request, 'projects/project_edit.html', {'form': form})
 
 
 @login_required
@@ -53,14 +53,14 @@ def project_draft_list(request):
 
 @login_required
 def project_publish(request, pk):
-        project = get_object_or_404(Project, pk=pk)
-        project.publish()
-        return redirect('projects.views.project_detail', pk=pk)
+    project = get_object_or_404(Project, pk=pk)
+    project.publish()
+    return redirect('projects.views.project_detail', pk=pk)
 
 
 @login_required
 def project_delete(request, pk):
-        project = get_object_or_404(Project, pk=pk)
-        project.delete()
-        return redirect('projects.views.project_list')
+    project = get_object_or_404(Project, pk=pk)
+    project.delete()
+    return redirect('projects.views.project_list')
 
